@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MedExtract AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="med-container">
+        <div class="med-card">
+            <h1>Med<span>Extract</span> AI</h1>
+            <p>NLP-Powered FDA Information Retrieval</p>
+            
+            <div class="search-bar">
+                <input type="text" id="medSearch" placeholder="Enter medicine name (e.g. Metformin)">
+                <button onclick="getMedInfo()" id="btn">Search</button>
+            </div>
+
+            <div id="resultBox" class="hidden">
+                <div id="answerText"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

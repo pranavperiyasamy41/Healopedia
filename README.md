@@ -1,24 +1,49 @@
-This project uses the DistilBERT-based Question Answering model:
+# Healopedia: AI-Powered Medical Information Extractor
 
-🔹 Model Name:
-distilbert-base-cased-distilled-squad
+Healopedia is a full-stack application that leverages Natural Language Processing (NLP) to extract precise medical usage information from the OpenFDA database. Instead of requiring users to manually read through exhaustive medical labels, Healopedia uses a Transformer model to pinpoint specific answers regarding medication indications and usage.
 
-🔹 About the Model:
-Base: DistilBERT (a lighter, faster version of BERT).
+---
 
-Fine-tuned on: SQuAD v1.1 (Stanford Question Answering Dataset).
+## Project Preview
 
-Task: Extractive Question Answering – finds answers from a given context.
+<p align="center">
+  <img src="Healopedia-1 (1).png" width="800" alt="Healopedia Interface">
+  <br>
+  <em>Main application interface showcasing the search and extraction area.</em>
+</p>
 
-🔹 Why This Model?
-It provides a good balance of accuracy and speed for real-time use cases.
+<p align="center">
+  <img src="Healopedia-1 (2).png" width="800" alt="Healopedia Output">
+  <br>
+  <em>AI-generated extraction from real-time FDA data.</em>
+</p>
 
-Suitable for short text contexts like FDA drug descriptions.
+---
 
-🔹 Inference Pipeline Used:
+## Core Features
+* **Real-time FDA Integration**: Fetches live drug label data directly from the official government OpenFDA API.
+* **Extractive Question Answering**: Utilizes the `distilbert-base-cased-distilled-squad` model to identify exact answers within large text blocks.
+* **Decoupled Architecture**: Built with a standalone FastAPI backend and a Vanilla JavaScript/CSS frontend for professional modularity.
+* **High-Performance Inference**: Optimized to run on PyTorch 2.6 with automated framework fallback.
 
-from transformers import pipeline
+---
 
-qa = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
+## Technical Architecture
 
-<img width="1869" height="748" alt="Screenshot 2025-07-29 100626" src="https://github.com/user-attachments/assets/84bb564b-4c1a-4fe4-b352-ca1f902cfb70" />
+
+
+* **Frontend**: HTML5, CSS3, JavaScript (ES6+).
+* **Backend**: FastAPI (Python 3.12).
+* **AI Model**: Hugging Face Transformers (DistilBERT).
+* **Primary Framework**: PyTorch 2.6.
+* **Data Source**: OpenFDA Drug Label API.
+
+---
+
+## Installation and Setup
+
+### 1. Backend Configuration
+Navigate to the backend directory and install the required dependencies:
+```bash
+pip install fastapi uvicorn transformers torch requests
+python main.py
